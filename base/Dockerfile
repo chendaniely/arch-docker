@@ -2,6 +2,8 @@ FROM base/devel
 
 RUN pacman -Syyu wget sudo nano emacs --noconfirm
 RUN useradd -ms /bin/bash archie
+
+# gives archie user passwordless sudo
 RUN passwd -d archie
 RUN printf 'archie ALL=(ALL) ALL\n' | tee -a /etc/sudoers
 
@@ -19,4 +21,4 @@ RUN  makepkg -s --noconfirm
 
 WORKDIR /home/archie/
 
-CMD /usr/bin/bash
+CMD /bin/bash
