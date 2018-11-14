@@ -1,2 +1,9 @@
+# temp files
+.#*
+*#
+.*~
+*~
+
+# mac
 .DS_Store
 
